@@ -139,7 +139,7 @@
     <module>onebusaway-watchdog-webapp</module>
     <module>onebusaway-status-agent</module>
   </modules>
-  
+
   <!-- This is where we control the master dependency version used by all modules -->
   <dependencyManagement>
 
@@ -452,7 +452,7 @@
             </excludes>
           </configuration>
           <executions>
-            <!-- Instead, we add a special integration-test execution that runs any tests in the org.onebusaway.integration 
+            <!-- Instead, we add a special integration-test execution that runs any tests in the org.onebusaway.integration
               package -->
             <execution>
               <id>integration-tests</id>
@@ -468,7 +468,7 @@
                 <includes>
                   <include>org/onebusaway/integration/**/*Test.java</include>
                 </includes>
-                <!-- Don't stop the build if integration tests fail because we still want post-integration-test cleanup to 
+                <!-- Don't stop the build if integration tests fail because we still want post-integration-test cleanup to
                   run -->
                 <testFailureIgnore>true</testFailureIgnore>
               </configuration>
@@ -504,9 +504,9 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
-        <configuration>
+        <!--<configuration>
           <release>11</release>
-        </configuration>
+        </configuration>-->
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -584,7 +584,7 @@
 <!--                    <report>aggregate</report>-->
 <!--                  </reports>-->
 <!--                </reportSet>-->
-              </reportSets>              
+              </reportSets>
             </plugin>
           </reportPlugins>
         </configuration>
