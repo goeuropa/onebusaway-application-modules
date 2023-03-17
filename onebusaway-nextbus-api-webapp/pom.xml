@@ -37,7 +37,7 @@
 			<version>${project.version}</version>
 		</dependency>
 
-		<!-- This is the original SIRI API implementation that we hope to eventually
+		<!-- This is the original SIRI API implementation that we hope to eventually 
 			move away from -->
 		<dependency>
 			<groupId>org.onebusaway</groupId>
@@ -119,7 +119,7 @@
 			<artifactId>comparators</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>com.fasterxml.jackson.jaxrs</groupId>
 			<artifactId>jackson-jaxrs-json-provider</artifactId>
@@ -174,16 +174,9 @@
 			<version>2.3.3</version>
 		</dependency>
 		<dependency>
-			<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.14.0</version>
-				<dependencies>
-					<dependency>
-						<groupId>org.glassfish.jaxb</groupId>
-						<artifactId>jaxb-runtime</artifactId>
-						<version>2.3.3</version>
-					</dependency>
-				</dependencies>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.3</version>
 		</dependency>
 	</dependencies>
 
@@ -210,7 +203,7 @@
 					<generateGitPropertiesFilename>src/main/resources/git.properties</generateGitPropertiesFilename>
 					<!--  travis takes some shortcuts with git so we need to tell the plugin to ignore git errors -->
 					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
-					<failOnNoGitDirectory>false</failOnNoGitDirectory>
+					<failOnNoGitDirectory>false</failOnNoGitDirectory>					
 					<gitDescribe>
 						<skip>false</skip>
 						<always>true</always>
