@@ -53,7 +53,7 @@
         <mvc:interceptor>
             <mvc:mapping path="/swagger-ui/**"/>
             <mvc:mapping path="/v2/api-docs/**"/>
-            <bean class="org.onebusaway.api.configs.SpringFoxConfig"/>
+            <bean class="org.onebusaway.transit_data_federation_webapp.configs.SpringFoxConfig"/>
         </mvc:interceptor>
     </mvc:interceptors>
     <mvc:resources mapping="/swagger-ui/**" location="classpath:/META-INF/resources/webjars/springfox-swagger-ui/"/>
