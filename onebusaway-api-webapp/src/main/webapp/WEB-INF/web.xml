@@ -86,4 +86,75 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 
+  <servlet>
+    <servlet-name>swagger</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+      classpath:org/onebusaway/api/swagger-servlet.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui.html</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui.index.html</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/springfox.css</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/springfox.js</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/swagger-ui.css</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/swagger-ui.js</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/swagger-ui-bundle.js</url-pattern>
+  </servlet-mapping>
+
+<servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-ui/swagger-ui-standalone-preset.js</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/v2/api-docs</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-resources</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-resources/configuration/ui</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>swagger</servlet-name>
+    <url-pattern>/swagger-resources/configuration/security</url-pattern>
+  </servlet-mapping>
+
 </web-app>
