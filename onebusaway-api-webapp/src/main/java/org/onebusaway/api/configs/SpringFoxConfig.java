@@ -1,10 +1,12 @@
-package org.onebusaway.transit_data_federation_webapp.configs;
+package org.onebusaway.api.configs;
 
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -18,14 +20,23 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @EnableWebMvc
 public class SpringFoxConfig implements WebMvcConfigurer {
+    private final String baseUrl = "http://localhost:9090/oba-api";
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resources/");
-
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        String baseUrl = StringUtils.trimTrailingCharacter(this.baseUrl, '/');
+        registry.
+                addResourceHandler(baseUrl + "/swagger-ui/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/springfox-swagger-ui/")
+                .resourceChain(false);
     }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController(baseUrl + "/swagger-ui/")
+                .setViewName("forward:" + baseUrl + "/swagger-ui/index.html");
+    }
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -36,6 +47,7 @@ public class SpringFoxConfig implements WebMvcConfigurer {
                 .apiInfo(apiInfo());
 
     }
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("OBA")

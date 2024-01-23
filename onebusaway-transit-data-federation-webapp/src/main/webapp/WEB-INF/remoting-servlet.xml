@@ -50,14 +50,7 @@
             <mvc:mapping path="/playback**.do" />
             <bean class="org.onebusaway.transit_data_federation_webapp.controllers.PlaybackInterceptor" />
         </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/swagger-ui/**"/>
-            <mvc:mapping path="/v2/api-docs/**"/>
-            <bean class="org.onebusaway.transit_data_federation_webapp.configs.SpringFoxConfig"/>
-        </mvc:interceptor>
     </mvc:interceptors>
-    <mvc:resources mapping="/swagger-ui/**" location="classpath:/META-INF/resources/webjars/springfox-swagger-ui/"/>
-
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
@@ -74,11 +67,4 @@
         <property name="serviceInterface" value="org.onebusaway.realtime.api.VehicleLocationListener" />
     </bean>
 
-<!--    &lt;!&ndash; Security Configuration &ndash;&gt;-->
-<!--    <sec:http pattern="/swagger-resources/**" security="none"/>-->
-<!--    <sec:http pattern="/swagger-ui.html" security="none"/>-->
-<!--    <sec:http pattern="/v2/api-docs" security="none"/>-->
-<!--    <sec:http pattern="/webjars/**" security="none"/>-->
-
-<!--    <sec:global-method-security pre-post-annotations="enabled"/>-->
 </beans>
